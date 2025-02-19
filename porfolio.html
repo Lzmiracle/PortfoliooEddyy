@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Porfolio</title>
+  </head>
+ <body>
+
+  <header class="header">
+    <div class="container d-flex">
+        <div class="logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <nav class="navbar">
+           <ul class="menu list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            
+           </ul>
+        </nav>
+        <div class="right">
+            <ul class="socials list-unstyled">
+                <li><a href="https://www.tiktok.com/@gfmiracle_"target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <li><a href="https://www.instagram.com/eddy_acy/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <li><a href="https://twitter.com/LLeacks" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <li><a href="https://www.youtube.com/@LzMiracle/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <li><a href="https://www.linkedin.com/in/eddy-a-b21a32259/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+           </ul>
+           <button class="burger"><span class="bar"></span>
+
+           </button>
+        </div>
+    </div>
+ </header>
+
+ <div id="gallery-container">
+  <!-- Les slides de la galerie -->
+
+  
+  <div class="gallery-slide" style="display: block;">
+      <img src="./images/attestation.jpg" alt="">
+      <div class="description">Obtaining the ANSSI MOOC certificate.</div>
+  </div>
+
+  <div class="gallery-slide">
+    <img src="./images/porfolio_pdf.png" alt="">
+    <div class="description">Creation of a PDF portfolio.<p>
+    </div>
+  </div>
+
+  <div class="gallery-slide">
+      <img src="./images/1.png" alt="Description for image 2">
+      <div class="description">Creation of a website called "Ti Morpion" using CSS, HTML, JavaScript, and PHP.</div>
+  </div>
+  <div class="gallery-slide">
+    <img src="./images/adalmpluto.jpg" alt="">
+    <div class="description">This project involved designing a three-character transmission system, including a transmitter, a receiver, and a frame, using the ADALM-Pluto through the Simulink environment in Matlab.</div>
+</div>
+
+<div class="gallery-slide">
+  <img src="./images/2.png" alt="">
+  <div class="description"><p>The objective of these practical exercises was to implement a simple segmented network while filtering basic traffic.</p>Additionally, the following exercises focused on integrating advanced modules for network security.
+  </div>
+</div>
+
+<div class="gallery-slide">
+  <img src="./images/screen6.png" alt="">
+  <div class="description">Creation of a complex website using LaTeX for a challenging project.<p>
+  </div>
+</div>
+
+<div class="gallery-slide">
+  <img src="./images/appareilmesure.jpg" alt="">
+  <div class="description">During a practical session, we measured the electromagnetic field of Wi-Fi signals.<p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- Ajoutez d'autres slides selon vos besoins -->
+</div>
+
+<!-- Boutons de navigation -->
+<div class="gallery-navigation">
+  <button id="prev">&#10094; Prev</button>
+  <button id="next">Next &#10095;</button>
+</div>
+
+<!-- Popup pour l'image agrandie -->
+<div id="popup-container" class="hidden">
+  <span id="close-popup">&times;</span>
+  <img id="popup-image" src="" alt="Image agrandie">
+  <div id="popup-description"></div>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function moveSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("gallery-slide");
+  if (n >= slides.length) slideIndex = 0;
+  if (n < 0) slideIndex = slides.length - 1;
+  
+  Array.from(slides).forEach(slide => slide.style.display = "none");
+  slides[slideIndex].style.display = "block";
+}
+
+document.getElementById('prev').addEventListener('click', () => moveSlide(-1));
+document.getElementById('next').addEventListener('click', () => moveSlide(1));
+
+Array.from(document.getElementsByClassName('gallery-slide')).forEach(item => {
+  item.addEventListener('click', function() {
+      let imgSrc = this.getElementsByTagName('img')[0].src;
+      let imgDescription = this.getElementsByClassName('description')[0].textContent;
+      
+      document.getElementById('popup-image').src = imgSrc;
+      document.getElementById('popup-description').textContent = imgDescription;
+      document.getElementById('popup-container').style.display = "flex";
+  });
+});
+
+document.getElementById('close-popup').addEventListener('click', () => {
+  document.getElementById('popup-container').style.display = "none";
+});
+
+</script>
+
+
+    <footer>
+    <div class="footer">
+      <div class="grid">
+        <div class="grid__item">
+          <p>ANCELLY Eddy</p>
+          <p></p>
+        </div>
+        <div class="grid__item">
+          <ul class="socials list-unstyled">
+            <li><a href="https://www.tiktok.com/@gfmiracle_"target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+              <li><a href="https://www.instagram.com/eddy_acy/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <li><a href="https://twitter.com/LLeacks" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+              <li><a href="https://www.youtube.com/@LzMiracle/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <li><a href="https://www.linkedin.com/in/eddy-ancelly-b21a32259/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="grid__item">
+          <p>Copyright © 2025. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+      
+  </body>
+</html>
+
